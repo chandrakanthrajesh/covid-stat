@@ -1,21 +1,18 @@
+// Including npm packages
 const express = require('express');
-const app = express();
-const controller = require('./routes/controller');
 const path = require('path');
+const config = require('config');
 
-app.set("views",path.join(__dirname,"views"));
+// Including controllers
+const ctrlMapViewer = require('./routes/mapViewer');
+
+const app = express();
+
+app.set("views", path.join(__dirname,"views"));
 app.set('view engine','ejs');
 
+app.use('/', ctrlMapViewer)
 
-app.use('/',controller)
-
-
-
-
-
-
-
-
-app.listen(3000,(req,res)=>{
-    console.log("Succesfully running on PORT 3000")
-})
+app.listen(config.server.port, (req, res) => {
+    console.log("Succesfully running on port: " + config.server.port);
+});
