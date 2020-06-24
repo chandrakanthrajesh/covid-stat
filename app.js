@@ -16,3 +16,7 @@ app.use('/', ctrlMapViewer)
 app.listen(config.server.port, (req, res) => {
     console.log("Succesfully running on port: " + config.server.port);
 });
+
+
+
+
