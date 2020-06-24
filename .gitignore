@@ -4,5 +4,6 @@ package-lock.json
 .idea/
 
 /notes
+/other
 
 /config/default.json

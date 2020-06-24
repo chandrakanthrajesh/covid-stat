@@ -8,8 +8,10 @@ const ctrlMapViewer = require('./routes/mapViewer');
 
 const app = express();
 
-app.set("views", path.join(__dirname,"views"));
-app.set('view engine','ejs');
+app.set("views", path.join(__dirname, "views"));
+app.set('view engine', 'ejs');
+
+app.use('/resources', express.static('public'));
 
 app.use('/', ctrlMapViewer)
 
